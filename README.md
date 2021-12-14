@@ -33,13 +33,26 @@ In the end, I decided to implement the NLP model using PyTorch due to the learni
 
 The word embedding comes from the pre-trained word vector of [Global Vectors for Word Representation (GloVe)](https://nlp.stanford.edu/projects/glove/). The following pre-trained word embedding was explored:
 
-- glove.twitter.27B.25d.txt 
-- glove.twitter.27B.50d.txt
-- glove.twitter.27B.100d.txt
-- glove.twitter.27B.200d.txt
-- glove.6B.50d.txt
-- glove.6B.100d.txt
-- glove.6B.200d.txt
-- glove.6B.300d.txt
+- ./glove_embedding/glove.twitter.27B.25d.txt
+- ./glove_embedding/glove.twitter.27B.200d.txt
+- ./glove_embedding/glove.6B.200d.txt
+- ./glove_embedding/glove.6B.300d.txt
 
+## How to run the code
+
+### Data
+
+The processed dataset is in the `./data/covid_dataset.csv`. 
+
+### Install Packages
+
+Run `pip install -r requirements.txt` to install all required packages. Use `pip3` if you are using Mac.
+
+### Run a Single Instance
+
+Run `./train_and_test.py --data_path=./data/covid_dataset.csv --glove_path=./glove_embedding/glove.twitter.27B.25d.txt --batch_size=10 --epoch=10 --word_embedding_dim=25 --hidden_dim=32` to train and test the model.
+
+### Run Multiple Instances
+
+If you want to experiment with different hyperparameters of the model, you can modify the PowerShell Script `run.ps1` and run it. It will pipe the results into a text file to the `result` folder.
 
