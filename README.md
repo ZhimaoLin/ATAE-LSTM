@@ -54,7 +54,7 @@ Run `pip install -r requirements.txt` to install all required packages. Use `pip
 
 ### Run a Single Instance
 
-Run `./train_and_test.py --data_path=./data/covid_dataset.csv --glove_path=./glove_embedding/glove.twitter.27B.25d.txt --batch_size=10 --epoch=10 --word_embedding_dim=25 --hidden_dim=32` to train and test the model.
+Run `python ./train_and_test.py --data_path=./data/covid_dataset.csv --glove_path=./glove_embedding/glove.twitter.27B.25d.txt --batch_size=10 --epoch=10 --word_embedding_dim=25 --hidden_dim=32` to train and test the model.
 
 ### Run Multiple Instances
 
