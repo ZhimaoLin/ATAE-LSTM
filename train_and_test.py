@@ -8,6 +8,7 @@ import torch.optim as optim
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 import time
+from sklearn.metrics import f1_score
 
 from ATAE_LSTM import ATAE_LSTM
 from torch.utils.data import DataLoader, TensorDataset
@@ -120,6 +121,8 @@ def test(model, dataloader_test):
         aspect_count[key] = 0
     total = 0 
 
+    test_result = pd.DataFrame(columns=["prediction", "truth", "aspect"])
+
     with torch.no_grad():
         h0, c0 = model.init_prev_hidden()
         h0 = h0.to(DEVICE)
@@ -133,11 +136,37 @@ def test(model, dataloader_test):
 
             output, H = model(X, (h0, c0))
 
+            
+
             for i, k in enumerate(aspect):
                 if (torch.argmax(output[i]) == torch.argmax(y[i])):
                     correct_dict[k.item()] += 1
                 total += 1
                 aspect_count[k.item()] += 1
+
+                row = pd.DataFrame([[torch.argmax(output[i]).item()+1, torch.argmax(y[i]).item()+1, k.item()]], columns=["prediction", "truth", "aspect"])
+                test_result = test_result.append(row)
+
+    print("========================================")
+    print(f"F1 Score Micro")
+    print("========================================")
+    for key in ASPECT_DICT_TO_TEXT:
+        print(f"Aspect: {ASPECT_DICT_TO_TEXT[key]}")
+        df = test_result[test_result["aspect"] == key]
+        score = f1_score(df["truth"].values.astype(int), df["prediction"].values.astype(int), average='micro')
+        print(score)
+    print("========================================")
+
+
+    print("========================================")
+    print(f"F1 Score Macro")
+    print("========================================")
+    for key in ASPECT_DICT_TO_TEXT:
+        print(f"Aspect: {ASPECT_DICT_TO_TEXT[key]}")
+        df = test_result[test_result["aspect"] == key]
+        score = f1_score(df["truth"].values.astype(int), df["prediction"].values.astype(int), average='macro')
+        print(score)
+    print("========================================")
 
 
     total_correct = 0
