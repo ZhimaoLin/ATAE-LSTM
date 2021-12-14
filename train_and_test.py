@@ -73,12 +73,9 @@ def convert_to_tensor(df):
     x_text_test_tensor = torch.stack(tensor_list)
 
     sentiment_list = []
-    # aspect_list = []
     for row in y_test:
         row_sentiment = torch.from_numpy(row[0]).float()
         sentiment_list.append(row_sentiment)
-        # row_aspect = row[1]
-        # aspect_list.append(row_aspect)
     y_sentiment_test_tensor = torch.stack(sentiment_list)
     y_aspect_test_tensor = torch.from_numpy(y_test[:, 1].astype(int))
 
@@ -115,9 +112,9 @@ def train(dataloader_train, word_embedding_dim, hidden_dim, batch_size, sentence
 
             loss_list.append(loss.item())
 
-    plt.figure()    
-    plt.plot(loss_list)
-    plt.savefig()
+    # plt.figure()    
+    # plt.plot(loss_list)
+    # plt.show()
 
     return model
 
