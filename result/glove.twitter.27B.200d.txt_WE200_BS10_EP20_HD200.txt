@@ -4,8 +4,8 @@ Configurations
 ========================================
 Data path: ./data/covid_dataset.csv
 Glove path: ./glove_embedding/glove.twitter.27B.200d.txt
-Batch size: 5
-EPOCH: 5
+Batch size: 10
+EPOCH: 20
 Word embeddig dimension: 200
 Hidden dimension: 200
 There are [0] texts with no aspect.
@@ -52,7 +52,7 @@ Test: Number of entries of each aspect:
 Name: aspect, dtype: int64
 ========================================
 ========================================
-Train Time: 61.03115272521973 s
+Train Time: 172.70751929283142 s
 ========================================
 ========================================
 F1 Score Micro
@@ -60,19 +60,19 @@ F1 Score Micro
 Aspect: politics
 0.9371980676328503
 Aspect: economy
-0.65625
+0.34375
 Aspect: foreign
 0.8125
 Aspect: culture
 0.8666666666666667
 Aspect: situation
-0.7184873949579833
+0.2773109243697479
 Aspect: measures
-0.5419354838709678
+0.22580645161290322
 Aspect: racism
 0.912751677852349
 Aspect: overall
-0.5415335463258786
+0.4097444089456869
 ========================================
 ========================================
 F1 Score Macro
@@ -80,19 +80,19 @@ F1 Score Macro
 Aspect: politics
 0.32252701579384874
 Aspect: economy
-0.39622641509433965
+0.2558139534883721
 Aspect: foreign
 0.2988505747126437
 Aspect: culture
 0.4642857142857143
 Aspect: situation
-0.2787286063569682
+0.1447368421052632
 Aspect: measures
-0.23430962343096237
+0.12280701754385964
 Aspect: racism
 0.3181286549707602
 Aspect: overall
-0.23419689119170983
+0.19376770538243626
 ========================================
 ========================================
 The accuracy of aspect [politics]
@@ -102,7 +102,7 @@ The accuracy of aspect [politics]
 ========================================
 The accuracy of aspect [economy]
 ========================================
-0.65625
+0.34375
 ========================================
 ========================================
 The accuracy of aspect [foreign]
@@ -117,12 +117,12 @@ The accuracy of aspect [culture]
 ========================================
 The accuracy of aspect [situation]
 ========================================
-0.7184873949579832
+0.2773109243697479
 ========================================
 ========================================
 The accuracy of aspect [measures]
 ========================================
-0.5419354838709678
+0.22580645161290322
 ========================================
 ========================================
 The accuracy of aspect [racism]
@@ -132,8 +132,8 @@ The accuracy of aspect [racism]
 ========================================
 The accuracy of aspect [overall]
 ========================================
-0.5415335463258786
+0.4097444089456869
 ========================================
 ========================================
-Total Accuracy: 0.6425925925925926
+Total Accuracy: 0.49027777777777776
 ========================================

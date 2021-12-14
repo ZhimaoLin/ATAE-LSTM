@@ -3,16 +3,16 @@ Running on the GPU
 Configurations
 ========================================
 Data path: ./data/covid_dataset.csv
-Glove path: ./glove_embedding/glove.twitter.27B.200d.txt
+Glove path: ./glove_embedding/glove.6B.300d.txt
 Batch size: 5
-EPOCH: 5
-Word embeddig dimension: 200
-Hidden dimension: 200
+EPOCH: 20
+Word embeddig dimension: 300
+Hidden dimension: 300
 There are [0] texts with no aspect.
 There are [7198] texts left to analyze.
 The maximum length of the sentences is [94]
 The average length of the sentences is [33.79341483745485]
-There are [13352] number of words that are not in the glove library.
+There are [8317] number of words that are not in the glove library.
 ========================================
 Number of entries of each aspect:
 ========================================
@@ -52,25 +52,25 @@ Test: Number of entries of each aspect:
 Name: aspect, dtype: int64
 ========================================
 ========================================
-Train Time: 61.03115272521973 s
+Train Time: 246.02748799324036 s
 ========================================
 ========================================
 F1 Score Micro
 ========================================
 Aspect: politics
-0.9371980676328503
+0.05314009661835749
 Aspect: economy
 0.65625
 Aspect: foreign
-0.8125
+0.07142857142857142
 Aspect: culture
-0.8666666666666667
+0.13333333333333333
 Aspect: situation
 0.7184873949579833
 Aspect: measures
 0.5419354838709678
 Aspect: racism
-0.912751677852349
+0.06711409395973154
 Aspect: overall
 0.5415335463258786
 ========================================
@@ -78,26 +78,26 @@ Aspect: overall
 F1 Score Macro
 ========================================
 Aspect: politics
-0.32252701579384874
+0.033639143730886854
 Aspect: economy
 0.39622641509433965
 Aspect: foreign
-0.2988505747126437
+0.044444444444444446
 Aspect: culture
-0.4642857142857143
+0.11764705882352941
 Aspect: situation
 0.2787286063569682
 Aspect: measures
 0.23430962343096237
 Aspect: racism
-0.3181286549707602
+0.041928721174004195
 Aspect: overall
 0.23419689119170983
 ========================================
 ========================================
 The accuracy of aspect [politics]
 ========================================
-0.9371980676328503
+0.05314009661835749
 ========================================
 ========================================
 The accuracy of aspect [economy]
@@ -107,12 +107,12 @@ The accuracy of aspect [economy]
 ========================================
 The accuracy of aspect [foreign]
 ========================================
-0.8125
+0.07142857142857142
 ========================================
 ========================================
 The accuracy of aspect [culture]
 ========================================
-0.8666666666666667
+0.13333333333333333
 ========================================
 ========================================
 The accuracy of aspect [situation]
@@ -127,7 +127,7 @@ The accuracy of aspect [measures]
 ========================================
 The accuracy of aspect [racism]
 ========================================
-0.912751677852349
+0.06711409395973154
 ========================================
 ========================================
 The accuracy of aspect [overall]
@@ -135,5 +135,5 @@ The accuracy of aspect [overall]
 0.5415335463258786
 ========================================
 ========================================
-Total Accuracy: 0.6425925925925926
+Total Accuracy: 0.45601851851851855
 ========================================

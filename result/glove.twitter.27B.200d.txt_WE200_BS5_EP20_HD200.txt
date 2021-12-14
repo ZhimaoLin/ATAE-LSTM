@@ -5,7 +5,7 @@ Configurations
 Data path: ./data/covid_dataset.csv
 Glove path: ./glove_embedding/glove.twitter.27B.200d.txt
 Batch size: 5
-EPOCH: 5
+EPOCH: 20
 Word embeddig dimension: 200
 Hidden dimension: 200
 There are [0] texts with no aspect.
@@ -52,7 +52,7 @@ Test: Number of entries of each aspect:
 Name: aspect, dtype: int64
 ========================================
 ========================================
-Train Time: 61.03115272521973 s
+Train Time: 236.18453645706177 s
 ========================================
 ========================================
 F1 Score Micro

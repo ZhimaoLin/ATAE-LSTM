@@ -3,16 +3,16 @@ Running on the GPU
 Configurations
 ========================================
 Data path: ./data/covid_dataset.csv
-Glove path: ./glove_embedding/glove.twitter.27B.200d.txt
-Batch size: 5
-EPOCH: 5
+Glove path: ./glove_embedding/glove.6B.200d.txt
+Batch size: 10
+EPOCH: 20
 Word embeddig dimension: 200
 Hidden dimension: 200
 There are [0] texts with no aspect.
 There are [7198] texts left to analyze.
 The maximum length of the sentences is [94]
 The average length of the sentences is [33.79341483745485]
-There are [13352] number of words that are not in the glove library.
+There are [8317] number of words that are not in the glove library.
 ========================================
 Number of entries of each aspect:
 ========================================
@@ -52,7 +52,7 @@ Test: Number of entries of each aspect:
 Name: aspect, dtype: int64
 ========================================
 ========================================
-Train Time: 61.03115272521973 s
+Train Time: 164.0050117969513 s
 ========================================
 ========================================
 F1 Score Micro
