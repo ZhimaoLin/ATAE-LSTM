@@ -57,3 +57,14 @@ Run `./train_and_test.py --data_path=./data/covid_dataset.csv --glove_path=./glo
 ### Run Multiple Instances
 
 If you want to experiment with different hyperparameters of the model, you can modify the PowerShell Script `run.ps1` and run it. It will pipe the results into a text file to the `result` folder.
+
+## Results
+
+The best overall accuracy comes from the following configurations:
+
+- Word embedding dimension: 25  
+- Hidden dimension: 25
+- Batch size: 10
+- Epoch: 10
+
+The overall accuracy is 71.48%.

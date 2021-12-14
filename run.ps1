@@ -6,7 +6,7 @@ $glovePathList = @('./glove_embedding/glove.twitter.27B.25d.txt',
 
 $wordEmbeddingDimList = @(25, 200, 200, 300)
 $batchSizeList = @(5, 10)
-$epochList = @(5, 10)
+$epochList = @(5, 10, 20)
 $hiddenDimList = $wordEmbeddingDimList
 
 
@@ -42,5 +42,3 @@ for ($i = 0; $i -lt $glovePathList.Length; $i++) {
 
 }
 
-
-# python ./train_and_test.py --data_path=./data/covid_dataset.csv --glove_path=./glove_embedding/glove.twitter.27B.25d.txt --batch_size=10 --epoch=5 --word_embedding_dim=25 --hidden_dim=32 > result/1.txt
