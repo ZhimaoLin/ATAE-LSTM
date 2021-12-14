@@ -14,18 +14,6 @@ def read_data(data_path):
     df = pd.read_csv(data_path)
     df = df.drop(df.columns[0], axis=1)
 
-    # new_df = pd.DataFrame(columns=["id","text","politics","economy","foreign","culture","situation","measures","racism","overall"],)
-    # for i, row in df.iterrows():
-    #     row_copy = row.copy()
-    #     aspect_index = row_copy[2:].index[row_copy.iloc[2:] > 0].tolist()
-    #     sentiments = row_copy.loc[aspect_index].copy()
-    #     for i in range(len(aspect_index)):
-    #         row_copy.loc[aspect_index] = 0
-    #         row_copy.loc[aspect_index[i]] = sentiments[i]
-    #         new_df = new_df.append(row_copy)
-    # new_df.reset_index(drop=True).to_csv("./data/covid_dataset.csv")
-    # df = new_df.reset_index(drop=True)
-
     category_df = df.iloc[:, 2:]
     result = df.iloc[:, 0:2]
 

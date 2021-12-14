@@ -40,8 +40,6 @@ def convert_to_tensor(df):
     print(describe_test.loc[:, "aspect"].value_counts())
     print("========================================")
 
-
-
     # Train data
     tensor_list = []
     for row in x_text_train:
@@ -203,8 +201,6 @@ def main():
     parser.add_argument("--epoch", type=int, required=True, help="epoch")
     parser.add_argument("--word_embedding_dim", type=int, required=True, help="word embedding dimension")
     parser.add_argument("--hidden_dim", type=int, required=True, help="hidden dimension")
-    # parser.add_argument("--sentence_length", type=int, required=True, help="the max length of the sentence")
-    # parser.add_argument("--graph_name", type=str, required=True, help="loss graph name")
 
     args, _ = parser.parse_known_args()
     data_path = args.data_path
@@ -213,7 +209,6 @@ def main():
     epoch = args.epoch
     word_embedding_dim = args.word_embedding_dim
     hidden_dim = args.hidden_dim
-    # sentence_length = SENTENCE_LENGTH
 
     global BATCH_SIZE 
     global EPOCHS 
@@ -250,8 +245,6 @@ def main():
     test(model, dataloader_test)
 
 
-
-
-    
+   
 if __name__ == '__main__':
     main()

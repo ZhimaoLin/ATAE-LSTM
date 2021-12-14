@@ -42,7 +42,7 @@ The word embedding comes from the pre-trained word vector of [Global Vectors for
 
 ### Data
 
-The processed dataset is in the `./data/covid_dataset.csv`. 
+The pre-processed dataset is in the `./data/covid_dataset.csv`. Each sentence may have multiple aspects. However, the ATAE-LSTM model can only take one aspect per sentence. So, if a sentence has multiple aspects, I separate them so that each row only contains one aspect of a sentence.  
 
 ### Install Packages
 
@@ -55,4 +55,3 @@ Run `./train_and_test.py --data_path=./data/covid_dataset.csv --glove_path=./glo
 ### Run Multiple Instances
 
 If you want to experiment with different hyperparameters of the model, you can modify the PowerShell Script `run.ps1` and run it. It will pipe the results into a text file to the `result` folder.
-
