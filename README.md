@@ -23,11 +23,11 @@ In the end, I decided to implement the NLP model using PyTorch due to the learni
 
 ## Development Environment
 
-|||
-|:---|:---|
-|dsfas|dsaf|
-
-
+|                  |                         |
+| :--------------- | :---------------------- |
+| Operating System | Windows 10 Version 21H2 |
+| PyTorch          | 1.10 + Pip + CUDA 11.3  |
+| CUDA             | 11.5                    |
 
 ## Word Embedding
 

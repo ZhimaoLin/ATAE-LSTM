@@ -40,19 +40,7 @@ class ATAE_LSTM(nn.Module):
 
         # W * h*
         self.w_h_star = nn.Linear(self.hidden_dim, self.num_class)
-
     
-    def init_prev_hidden(self):
-        return (torch.zeros(1, self.batch_size, self.hidden_dim), torch.zeros(1, self.batch_size, self.hidden_dim))
-
-    def __softmax(self, M, dim):
-        softmax_list = []
-        for i, m in enumerate(M):
-            softmax = F.softmax(m, dim=dim)
-            softmax_list.append(softmax)
-        softmax_tensor = torch.stack(softmax_list)
-        return softmax_tensor
-            
 
     def forward(self, x, prev_hidden):
         H, context = self.lstm(x, prev_hidden)
@@ -61,11 +49,8 @@ class ATAE_LSTM(nn.Module):
         K = self.__get_K(H, x)
         W_H_A = self.w_hv(K)
         M = torch.tanh(W_H_A)
-
         W_M = self.w_m(M)
-
         alpha = self.__softmax(W_M, dim=1)
-
 
         r = torch.matmul(H, torch.transpose(alpha, 1, 2))
 
@@ -76,37 +61,12 @@ class ATAE_LSTM(nn.Module):
         for i, a_batch in enumerate(sum):
             sum[i] = W_R[i] + W_HN[i]
 
-
         h_star = torch.tanh(sum)
-
         W_H_STAR = self.w_h_star(h_star)
-
         y = self.__softmax(W_H_STAR, dim=1)
+
         y = y[:, -1]
         return y, H
-
-    
-
-    # def __get_M(self, out, x):
-    #     # Aspect Dimension
-    #     # batch_size * word_embedding_dim
-    #     aspect = self.__get_aspect(x)
-
-    #     M = torch.clone(out)
-
-    #     M_list = []
-    #     for i, sentence in enumerate(M):
-    #         h_add_aspect = torch.cat((sentence, torch.stack([aspect[i] for _ in range(sentence.shape[0])])), dim=1)
-    #         M_list.append(h_add_aspect)
-
-    #     result = torch.stack(M_list)
-    #     result = F.tanh(result)
-    #     return result
-
-
-
-
-
 
 
     def __get_aspect(self, x):
@@ -123,7 +83,15 @@ class ATAE_LSTM(nn.Module):
             K_list.append(torch.cat((sentence, aspect_tensor), dim=1))
         K = torch.stack(K_list)
         return K
-        
-        
 
+    def __softmax(self, M, dim):
+        softmax_list = []
+        for i, m in enumerate(M):
+            softmax = F.softmax(m, dim=dim)
+            softmax_list.append(softmax)
+        softmax_tensor = torch.stack(softmax_list)
+        return softmax_tensor
 
+    def init_prev_hidden(self):
+        return (torch.zeros(1, self.batch_size, self.hidden_dim), torch.zeros(1, self.batch_size, self.hidden_dim))
+            
