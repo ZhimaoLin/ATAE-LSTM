@@ -40,6 +40,8 @@ The word embedding comes from the pre-trained word vector of [Global Vectors for
 - ./glove_embedding/glove.6B.200d.txt
 - ./glove_embedding/glove.6B.300d.txt
 
+You need to download those text files from [Global Vectors for Word Representation (GloVe)](https://nlp.stanford.edu/projects/glove/) and pass the path to the `train_and_test.py`.
+
 ## How to run the code
 
 ### Data
