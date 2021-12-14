@@ -48,6 +48,8 @@ You need to download those text files from [Global Vectors for Word Representati
 
 The pre-processed dataset is in the `./data/covid_dataset.csv`. Each sentence may have multiple aspects. However, the ATAE-LSTM model can only take one aspect per sentence. So, if a sentence has multiple aspects, I separate them so that each row only contains one aspect of a sentence.  
 
+The aspects are defined in this dictionary: `{"politics":1, "economy":2, "foreign":3, "culture":4, "situation":5, "measures":6, "racism":7, "overall":8}`
+
 ### Install Packages
 
 Run `pip install -r requirements.txt` to install all required packages. Use `pip3` if you are using Mac.
