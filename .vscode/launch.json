@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args":["--data_path=./data/covid_dataset.csv", "--glove_path=./glove_embedding/glove.twitter.27B.50d.txt", "--batch_size=10", "--epoch=5", "--word_embedding_dim=50", "--hidden_dim=32"]
+            "args":["--data_path=./data/covid_dataset.csv", "--glove_path=./glove_embedding/glove.twitter.27B.25d.txt", "--batch_size=10", "--epoch=5", "--word_embedding_dim=25", "--hidden_dim=32"]
             // "args":["--data_path=./data/covid_dataset.csv", "--glove_path=./glove_embedding/glove.twitter.27B.100d.txt"]
             // "args":["--data_path=./data/covid_dataset.csv", "--glove_path=./glove_embedding/glove.6B.300d.txt"]
         }
