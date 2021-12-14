@@ -21,19 +21,11 @@ HIDDEN_DIM = 0
 
 DEVICE = None
 
-
-
 def convert_to_tensor(df):
     x_text = df.loc[:, "text_embedding"].values
     y = df.loc[:, ("sentiment_embedding", "aspect")].values
-    # y_sentiment = df.loc[:, "sentiment_embedding"].values
-    # aspect = df.loc[:, "aspect"].values
-
-
-    # x_text_train, x_text_test, y_sentiment_train, y_sentiment_test = train_test_split(x_text, y_sentiment, test_size=0.3, random_state=0)
     x_text_train, x_text_test, y_train, y_test = train_test_split(x_text, y, test_size=0.3, random_state=0)
 
-    # describe_train =  pd.DataFrame(y_train)
     describe_test = pd.DataFrame(y_test, columns=["sentiment_embedding", "aspect"])
 
     # Data summary
