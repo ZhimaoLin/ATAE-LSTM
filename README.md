@@ -4,6 +4,8 @@ This is an application of "[Attention-based LSTM for Aspect-level Sentiment Clas
 
 The Attention-based LSTM with Aspect Embedding (ATAE-LSTM) is implemented using [PyTorch](https://pytorch.org/) in order to conduct sentiment analysis on the Twitter [tweets](https://github.com/thunlp/COVID19-CountryImage) during the Covid-19 pandemic.
 
+For detailed explanation, please refer to [ATAE-LSTM Explain](./ATAE_LSTM.pdf).
+
 ## Motivation
 
 The main purpose of this project is to have a hands-on experience with the Aspect-based Sentiment Analysis (ABSA) using PyTorch by evaluating the NLP model in the paper above.
